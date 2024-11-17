@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RightTriangleCalculatorApp: App {
+    
+    @StateObject var calculationViewVM = CalculationViewVM()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CustomTabView().environmentObject(calculationViewVM)
         }
     }
 }
