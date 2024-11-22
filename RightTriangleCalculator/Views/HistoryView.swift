@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @EnvironmentObject var calculationViewVM:CalculationViewVM
+    
+    @ObservedObject var calculationViewVM: CalculationViewVM
     
     var body: some View {
         NavigationStack{
@@ -49,5 +50,5 @@ struct HistoryView: View {
 }
 
 #Preview {
-    HistoryView()
+    HistoryView(calculationViewVM: CalculationViewVM())
 }

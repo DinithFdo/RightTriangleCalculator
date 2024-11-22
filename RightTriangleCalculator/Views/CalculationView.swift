@@ -15,12 +15,7 @@ enum UnknownSide: String, CaseIterable{
 
 struct CalculationView: View {
     
-    @EnvironmentObject var calculationViewVM:CalculationViewVM
-//    @State var unknownEdge: UnknownSide = .base
-    @State var base: String = ""
-    @State var altitude: String = ""
-    @State var hypotenus: String = ""
-    @State var calculatedResult: CalculatedValues?
+    @ObservedObject var calculationViewVM: CalculationViewVM
     
     var body: some View {
         NavigationStack{
@@ -118,5 +113,5 @@ struct CalculationView: View {
 }
 
 #Preview {
-    CalculationView()
+    CalculationView(calculationViewVM: CalculationViewVM())
 }

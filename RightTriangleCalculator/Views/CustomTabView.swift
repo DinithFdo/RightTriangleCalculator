@@ -9,15 +9,18 @@ import SwiftUI
 
 struct CustomTabView: View {
     var body: some View {
+        
+        @StateObject var calculationViewVM = CalculationViewVM()
+        
         TabView{
             Tab("Calculation", systemImage: "sum") {
-                CalculationView()
+                CalculationView(calculationViewVM: calculationViewVM)
             }
             .badge(2)
             
             
             Tab("History", systemImage: "line.3.horizontal") {
-                HistoryView()
+                HistoryView(calculationViewVM: calculationViewVM)
             }
             
         }
